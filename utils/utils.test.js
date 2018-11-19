@@ -12,6 +12,15 @@ expect(res).toBe(44).toBeA('number');
 // }
 });
 
+
+it('should async add two numbers', (done) => {
+  utils.asyncAdd(4, 3, (sum) => {
+    expect(sum).toBe(7).toBeA('number');
+    done();
+  });
+});
+
+
 it('should square of number', () => {
 var res = utils.square(3);
 
@@ -19,6 +28,14 @@ expect(res).toBe(9).toBeA('number');
 
 expect(res).toBe(9).toBeA('number');
 });
+
+it('should async square a number', (done) => {
+  utils.asyncSquare(5, (res) => {
+    expect(res).toBe(25).toBeA('number');
+    done();
+  });
+});
+
 
 //should verify first and last name are set
 //assert it includes firstname and lastname with proper values
